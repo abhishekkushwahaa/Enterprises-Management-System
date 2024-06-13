@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/chart.css" />
+  </head>
+  <script
+    type="text/javascript"
+    src="https://www.gstatic.com/charts/loader.js"
+  ></script>
+
+  <body>
+    <h1 id="heading">Your work percentage of previous 5 years!</h1>
+    <div id="container-chart"></div>
+    <script>
+      google.charts.load("current", {
+        packages: ["corechart"],
+      });
+      google.charts.setOnLoadCallback(activityChart);
+
+      function activityChart() {
+        const data = google.visualization.arrayToDataTable([
+          ["Activity", "Percentage"],
+          ["Present", 54],
+          ["Absent", 46],
+        ]);
+
+        const options = {
+          title: "My Daily Activities",
+        };
+
+        const chart = new google.visualization.PieChart(
+          document.getElementById("container-chart")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+  </body>
+</html>
