@@ -1,0 +1,103 @@
+body {
+  background-color: #d3ead8;
+  margin: 0;
+  padding: 0;
+}
+
+#back {
+  margin-top: 20px;
+  margin-left: 50px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#back a {
+  color: white;
+  text-decoration: none;
+}
+
+#back:hover {
+  background-color: black;
+  color: white;
+}
+
+#add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+  width: 500px;
+  margin-left: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#pass-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 15px;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+  width: 500px;
+  margin-left: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+#salary-container {
+  display: flex;
+  align-items: center;
+}
+
+#salary {
+  flex: 1;
+}
+
+#add-button {
+  background-color: #222222;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  width: 500px;
+}
+
+#add-button:hover {
+  background-color: #555555;
+}
+
+select {
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+#changebtn {
+  background-color: #222222;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  width: 500px;
+}

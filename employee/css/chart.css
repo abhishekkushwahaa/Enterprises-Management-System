@@ -1,0 +1,18 @@
+#container-chart {
+  margin-top: 30px;
+  height: 450px;
+  width: 1000px;
+  align-items: center;
+  background-color: white;
+  padding-left: 20px;
+  margin-left: 250px;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+#heading {
+  margin-top: 30px;
+  margin-bottom: -10px;
+  margin-left: 250px;
+  font-size: 25px;
+  font-weight: bold;
+}

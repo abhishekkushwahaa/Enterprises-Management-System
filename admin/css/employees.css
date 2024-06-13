@@ -1,0 +1,69 @@
+#employees {
+  display: flex;
+  margin: 25px;
+  background-color: white;
+  width: 145vh;
+}
+
+#emp {
+  margin-left: 10px;
+  background-color: white;
+  font-size: 25px;
+}
+
+#emp-add {
+  align-items: center;
+  margin-top: 12px;
+  height: 40px;
+  width: 100px;
+}
+
+#emp-add:hover {
+  background-color: #202320;
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+  margin-left: 25px;
+  margin-right: 25px;
+  width: 145vh;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  background-color: #bbbaba;
+}
+
+#edit {
+  color: #2ba22f;
+}
+
+#delete {
+  color: #f44336;
+}
+
+#view {
+  color: #222222;
+}
+
+#NoRecord {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 50px;
+}

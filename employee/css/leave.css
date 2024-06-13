@@ -1,0 +1,62 @@
+body {
+  margin-top: 100px;
+  background-color: #d3ead8;
+  padding: 20px;
+}
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+input[type="date"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+label {
+  font-weight: bold;
+}
+
+/* Interactive CSS */
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#back {
+  margin-bottom: 20px;
+  margin-left: 35%;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+#back a {
+  color: white;
+  text-decoration: none;
+}

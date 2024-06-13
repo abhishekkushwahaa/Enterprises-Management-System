@@ -1,0 +1,126 @@
+#workh1 {
+  text-align: center;
+  color: #333;
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+#work-update-project {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 240px;
+  color: #333;
+  font-size: 15px;
+  margin-top: 20px;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  width: 1020px;
+}
+
+#work-update-project #house {
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid white;
+  border-radius: 4px;
+  height: 200px;
+  width: 250px;
+  background-color: white;
+  height: fit-content;
+}
+#work-update-project #client {
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid white;
+  border-radius: 4px;
+  height: 200px;
+  width: 250px;
+  background-color: white;
+  height: fit-content;
+}
+#work-update-project #learning {
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid white;
+  border-radius: 4px;
+  height: 200px;
+  width: 250px;
+  background-color: white;
+  height: fit-content;
+}
+
+#work-update {
+  background-color: white;
+  margin-left: 250px;
+  color: #333;
+  font-size: 15px;
+  margin-top: 20px;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  width: 1000px;
+}
+
+#work-update h1 {
+  font-size: 25px;
+  margin-left: 15px;
+}
+
+#work-update label {
+  margin-left: 15px;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+#work-update input[type="date"],
+#work-update select {
+  margin-left: 15px;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#work-update button {
+  margin-left: 15px;
+  margin-bottom: 5px;
+  background-color: #222222;
+  color: white;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+#work-update button:hover {
+  background-color: #45a049;
+}
+
+#dynamic h3 {
+  margin-top: -4px;
+  margin-left: 18px;
+  margin-bottom: 10px;
+}
+
+#dynamic textarea {
+  margin-left: 15px;
+  font-family: Arial, sans-serif;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#dynamic #work-time {
+  display: flex;
+  gap: 10px;
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

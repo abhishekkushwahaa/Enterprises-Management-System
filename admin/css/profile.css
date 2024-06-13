@@ -1,0 +1,67 @@
+#profile {
+  display: flex;
+  flex-direction: column;
+  margin-left: 290px;
+}
+
+#h1profile {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+form {
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  margin-left: 290px;
+}
+
+form:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  font-size: 18px;
+  display: block;
+  margin-top: 1px;
+  margin-bottom: 5px;
+}
+
+input {
+  width: calc(100% - 24px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+input[type="submit"] {
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: green;
+}
+
+input[type="submit"]:active {
+  transform: scale(0.98);
+}

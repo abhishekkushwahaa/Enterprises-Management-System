@@ -1,0 +1,12 @@
+#managers {
+  display: flex;
+  margin: 25px;
+  background-color: white;
+  width: 145vh;
+}
+
+#mngr {
+  margin-left: 10px;
+  background-color: white;
+  font-size: 25px;
+}

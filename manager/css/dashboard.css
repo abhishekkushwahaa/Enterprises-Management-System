@@ -1,0 +1,105 @@
+body {
+  background-color: #d3ead8;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+}
+
+img {
+  padding: 10px;
+  height: 100px;
+  width: 250px;
+}
+
+h2 {
+  font-size: 17px;
+}
+
+button {
+  margin-left: auto;
+  margin-right: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  font-family: oslwald;
+}
+
+.container {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  gap: 0px;
+}
+.box1 {
+  background-color: #222222;
+  height: 91vh;
+  width: 300px;
+  position: fixed;
+}
+.box2 {
+  height: 91vh;
+  width: 1070px;
+  margin-left: 300px;
+  padding: 20px;
+}
+
+#box1-content {
+  color: #4caf50;
+  padding-left: 10px;
+}
+#box2-content {
+  color: black;
+  padding-left: 20px;
+}
+ul {
+  list-style-type: none;
+  padding-left: 10px;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  margin-left: 10px;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #9ceb9f;
+  cursor: pointer;
+}
+#logo {
+  cursor: pointer;
+}
+
+#change-pass {
+  margin-left: 820px;
+  color: blue;
+  cursor: pointer;
+}
+
+#welcome {
+  color: #4caf50;
+  font-weight: 100;
+}

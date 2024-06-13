@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  database:
+    container_name: mysql
+    image: mysql:latest
+    volumes:
+      - dbdata:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=iitspath
+      - MYSQL_USER=phpmyadmin
+      - MYSQL_PASSWORD=phpmyadmin
+      - MYSQL_ROOT_PASSWORD=123456
+    ports:
+      - 8991:3306
+    networks:
+      - backend
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8992:80
+    depends_on:
+      - database
+    environment:
+      - PMA_HOST=database
+      - PMA_USER=phpmyadmin
+      - PMA_PASSWORD=phpmyadmin
+      - PMA_ROOT_PASSWORD=123456
+      - UPLOAD_LIMIT=3000000000
+    networks:
+      - backend
+
+networks:
+  backend:
+
+volumes:
+  dbdata:
