@@ -16,8 +16,8 @@
         $sql = "SELECT id, name, email, password FROM managers";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-        echo '
+            while ($row = $result->fetch_assoc()) {
+                echo '
         <nav>
             <a href="/manager/dashboard.php">
                 <img src="/public/iitspath.svg" alt="logo" id="logo">
@@ -25,11 +25,11 @@
             <h2>Welcome, <span id="welcome">' . (isset($row['name']) ? $row['name'] : 'Guest') . '</span>!</h2>
             <span><a id="change-pass" href="?page=pass-change&id=' . (isset($row['id']) ? $row['id'] : '') . '">Change Password</a></span>
             <button><a href="/manager/login.php">Logout</a></button>
-        </nav>'; 
+        </nav>';
             }
         } else {
             echo "<script>alert('No manager found!')</script>";
-        }       
+        }
         ?>
     </nav>
     <div class="container">
@@ -50,7 +50,7 @@
             } elseif ($page == "profile") {
                 include "profile.php";
             } elseif ($page == "view-employee") {
-                include "view-employee.php";    
+                include "view-employee.php";
             } elseif ($page == "pass-change") {
                 include "pass-change.php";
             } else {

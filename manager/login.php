@@ -14,7 +14,7 @@
         <input type="text" name="email" placeholder="Username or Email" id="email">
         <input type="password" name="password" placeholder="Password" id="password"> <br>
         <button type="submit" id="login-button">Login as Manager</button>
-        <p><a href="#">Forget password?</a></p>
+        <p><a href="./forgot-password.php">Forget password?</a></p>
     </form>
     <?php
     include "../databases/db.php";

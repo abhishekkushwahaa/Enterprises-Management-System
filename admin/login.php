@@ -15,7 +15,7 @@
     <input type="password" name="password" placeholder="Password" id="password" required />
     <br />
     <button type="submit" id="login-button">Login as Admin</button>
-    <p><a href="#">Forget password?</a></p>
+    <p><a href="./forgot-password.php">Forget password?</a></p>
   </form>
   <?php
   include "../databases/db.php";

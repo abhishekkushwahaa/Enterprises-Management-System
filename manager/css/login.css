@@ -7,6 +7,7 @@ body {
   height: 100vh;
   margin: 0;
 }
+
 form {
   background-color: #ffffff;
   display: flex;
@@ -18,12 +19,14 @@ form {
   border-radius: 10px;
   height: 400px;
   width: 400px;
-  font-family: oslwald;
+  font-family: oswald;
 }
+
 img {
   height: 100px;
   width: 250px;
 }
+
 input {
   padding: 10px;
   margin: 10px;
@@ -31,6 +34,7 @@ input {
   border-radius: 5px;
   border: 1px solid #000000;
 }
+
 button {
   padding: 10px;
   margin: 5px;
@@ -41,6 +45,17 @@ button {
   font-weight: bold;
   cursor: pointer;
 }
+
 h1 {
   font-size: 30px;
+}
+
+p {
+  font-size: 15px;
+  text-decoration: none;
+  text-decoration-color: #d3ead8;
+}
+a {
+  text-decoration: none;
+  color: green;
 }
