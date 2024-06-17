@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
 }
 
 // Get the total number of days present
-$sql = "SELECT ROUND((SELECT COUNT(*) FROM attendance WHERE status='present' AND employees_id=$id) / (SELECT COUNT(*) FROM attendance WHERE employees_id=$id) * 100) AS present_percentage";
+$sql = "SELECT ROUND((SELECT COUNT(*) FROM attendance WHERE status='present' AND employees_id=$id) / (SELECT COUNT(*) FROM attendance WHERE employees_id=$id) * 100) AS present_percentage FROM attendance WHERE date = date(NOW()) AND employees_id=$id";
 $result_percentage = $conn->query($sql);
 $present_percentage = 0;
 if ($result_percentage->num_rows > 0) {

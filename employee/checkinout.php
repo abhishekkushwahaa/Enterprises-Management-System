@@ -56,7 +56,6 @@
             $stmt_update->execute();
           }
         }
-        echo "<script>alert('Attendance updated successfully');</script>";
       } else {
         $sql_insert = "INSERT INTO attendance (employees_id, date, check_in, check_out, status)
         VALUES (?, ?, ?, ?, ?)";
@@ -65,16 +64,14 @@
         $stmt_insert->execute();
         echo "<script>alert('Attendance recorded successfully');</script>";
       }
-
+      echo "<script>alert('Attendance updated successfully');</script>";
       if (isset($stmt_insert)) {
         $stmt_insert->close();
       }
     }
-
     $conn->close();
     ?>
-
-    <form id="attendanceForm" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <form id="attendanceForm" method="POST" action="">
       <div id="check">
         <input type="hidden" name="employees_id" value="<?php echo $_SESSION['employees_id']; ?>">
         <input type="hidden" id="statusField" name="status">
@@ -84,7 +81,7 @@
           <span class="slider round"></span>
         </label>
         <span id="checkStatus">Check in</span>
-        <button id="attendbtn" type="submit">Submit</button>
+        <button id="attendbtn" name="attendbtn" type="submit">Submit</button>
       </div>
     </form>
     <script>
@@ -95,7 +92,6 @@
         document.getElementById("attendanceForm").submit();
       });
     </script>
-  </body>
 
-  </html>
-</body>
+  </body>
+</html>

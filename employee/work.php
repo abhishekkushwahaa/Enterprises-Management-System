@@ -7,24 +7,24 @@
     <link rel="stylesheet" href="./css/work.css">
     <title>Work</title>
 </head>
-<?php
-include "../databases/db.php";
-if (isset($_SESSION['employees_id'])) {
-    $employees_id = $_SESSION['employees_id'];
-}
-
-$sql = "SELECT * FROM employees WHERE id = ?";
-
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $employees_id);
-$stmt->execute();
-$result = $stmt->get_result();
-$employee = $result->fetch_assoc();
-$stmt->close();
-$conn->close();
-?>
 
 <body>
+    <?php
+    include "../databases/db.php";
+    if (isset($_SESSION['employees_id'])) {
+        $employee_id = $_SESSION['employees_id'];
+    }
+
+    $sql = "SELECT * FROM employees WHERE id = ?";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $employee_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $employee = $result->fetch_assoc();
+    $stmt->close();
+    $conn->close();
+    ?>
     <h1 id="workh1">Your work updates!</h1>
     <div id="work-update-project">
         <div id="house">
@@ -32,16 +32,16 @@ $conn->close();
             <?php
             include "../databases/db.php";
             date_default_timezone_set('Asia/Kolkata');
-            $employee_id = $_SESSION['employees_id'];
+            $employee_id = $employee['id'];
             $sql = "SELECT id, employees_id, category, date, description, DATE_FORMAT(start_time, '%l:%i %p') as start_time, DATE_FORMAT(end_time, '%l:%i %p') as end_time, status FROM work_updates WHERE employees_id = $employee_id ORDER BY category DESC";
             $result = $conn->query($sql);
 
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    if($row['category'] == 'inhouse'){
-                    echo "<h2>" . $row["status"] . "</h2>";
-                    echo "<p>" . $row['date'] . "," . $row['start_time'] . "-" . $row['end_time'] . ": " . $row['description'] . "</p>";
+                    if ($row['category'] == 'inhouse') {
+                        echo "<h2>" . $row["status"] . "</h2>";
+                        echo "<p>" . $row['date'] . "," . $row['start_time'] . "-" . $row['end_time'] . ": " . $row['description'] . "</p>";
                     }
                 }
             }
@@ -53,15 +53,15 @@ $conn->close();
             <?php
             include "../databases/db.php";
             date_default_timezone_set('Asia/Kolkata');
-            $employee_id = $_SESSION['employees_id'];
+            $employee_id = $employee['id'];
 
             $sql = "SELECT id, employees_id, category, date, description, DATE_FORMAT(start_time, '%l:%i %p') as start_time, DATE_FORMAT(end_time, '%l:%i %p') as end_time, status FROM work_updates WHERE employees_id = $employee_id ORDER BY category DESC";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    if($row['category'] == 'clientbased'){
-                    echo "<h2>" . $row["status"] . "</h2>";
-                    echo "<p>" . $row['date'] . "," . $row['start_time'] . "-" . $row['end_time'] . ": " . $row['description'] . "</p>";
+                    if ($row['category'] == 'clientbased') {
+                        echo "<h2>" . $row["status"] . "</h2>";
+                        echo "<p>" . $row['date'] . "," . $row['start_time'] . "-" . $row['end_time'] . ": " . $row['description'] . "</p>";
                     }
                 }
             }
@@ -73,14 +73,14 @@ $conn->close();
             <?php
             date_default_timezone_set('Asia/Kolkata');
             include "../databases/db.php";
-            $employee_id = $_SESSION['employees_id'];
+            $employee_id = $employee['id'];
             $sql = "SELECT id, employees_id, category, date, description, DATE_FORMAT(start_time, '%l:%i %p') as start_time, DATE_FORMAT(end_time, '%l:%i %p') as end_time, status FROM work_updates WHERE employees_id = $employee_id ORDER BY category DESC";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    if($row['category'] == 'learning'){
-                    echo "<h2>" . $row["status"] . "</h2>";
-                    echo "<p>" . $row['date'] . "," . $row['start_time'] . "-" . $row['end_time'] . ": " . $row['description'] . "</p>";
+                    if ($row['category'] == 'learning') {
+                        echo "<h2>" . $row["status"] . "</h2>";
+                        echo "<p>" . $row['date'] . "," . $row['start_time'] . "-" . $row['end_time'] . ": " . $row['description'] . "</p>";
                     }
                 }
             }
@@ -88,40 +88,10 @@ $conn->close();
             ?>
         </div>
     </div>
-
-    <?php
-    include "../databases/db.php";
-    date_default_timezone_set('Asia/Kolkata');
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $employees_id = $_POST['employees_id'] ?? null;
-        $date = $_POST['date'] ?? null;
-        $work_categories = $_POST['work'] ?? [];
-
-        foreach ($work_categories as $category) {
-            $start_time = $_POST[$category . '-time'][0] ?? null;
-            $end_time = $_POST[$category . '-time'][1] ?? null;
-            $description = $_POST[$category . '-description'] ?? null;
-
-            if ($start_time === null || $end_time === null || $description === null) {
-                echo "<script>alert('All fields are required. Please fill out all fields.');</script>";
-                return;
-            }
-
-            $sql = "INSERT INTO work_updates (employees_id, date, category, start_time, end_time, description) VALUES (?, ?, ?, ?, ?, ?)";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("isssss", $employees_id, $date, $category, $start_time, $end_time, $description);
-            $stmt->execute();
-        }
-
-        $stmt->close();
-        $conn->close();
-        echo "<script>alert('Work update submitted successfully');</script>";
-    }
-    ?>
     <div id="work-update">
         <h1>Provide Your Update</h1>
-        <form action="" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <input type="hidden" name="employees_id" value="<?php echo $employees_id ?>">
+        <form id="workForm" method="post" action="./work-action.php">
+            <input type="hidden" name="employee_id" value="<?php echo $employee['id'] ?>">
             <label for="date">Date:</label>
             <input type="date" id="date" name="date" required><br><br>
             <label for="select-work">Work categories (You can select multiple):</label>
@@ -133,7 +103,8 @@ $conn->close();
 
             <div id="work-details-container"></div>
 
-            <button type="submit" id="submit">Submit Update</button>
+            <button type="submit" id="worksubmit" name="worksubmit" >Submit Update</button>
+
         </form>
 
     </div>
@@ -160,6 +131,11 @@ $conn->close();
                 `;
                 workDetailsContainer.appendChild(workDetails);
             });
+        });
+        
+        document.getElementById("worksubmit").addEventListener("click", function() {
+            console.log("Submitting form");
+            document.getElementById("workForm").submit();
         });
     </script>
 </body>
