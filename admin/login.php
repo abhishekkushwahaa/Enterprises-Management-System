@@ -11,6 +11,7 @@
   <form method="POST">
     <img src="/public/iitspath.svg" alt="logo" width="100px" height="100px" id="logo" />
     <h1>Admin Login</h1>
+    <p id="email-pass">Email: test@gmail.com & Password: test</p>
     <input type="text" name="email" placeholder="Username or Email" id="username" required />
     <input type="password" name="password" placeholder="Password" id="password" required />
     <br />
