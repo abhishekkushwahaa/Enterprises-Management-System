@@ -19,7 +19,16 @@
         <h2 id="update">Lastest updates</h2>
         <h2 id="wish">Know whom you can wish</h2>
     </div>
-    <!-- <img src="./public/wishes.png" alt="wish" id="wishes"> -->
+    <div id="latest-updates">
+        <?php 
+        include './databases/db.php';
+        $sql = "SELECT * FROM updates";
+        $result = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<a href='./public/uploads/".$row['file_name']."'>".$row['id'].".".$row['file_name']."</a><br>";
+        }
+        ?>
+    </div>
     </img>
 </body>
 </html>

@@ -178,3 +178,163 @@ tr:nth-child(odd) {
   font-size: 25px;
   margin-top: 50px;
 }
+
+@media screen and (max-width: 768px) {
+  #Info,
+  #Info-Docs,
+  #file_upload,
+  #file_panding,
+  #attendance-h1,
+  #manger-Info,
+  #under-manager,
+  #employees {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+  }
+
+  #Info,
+  #Info-Docs,
+  #file_upload,
+  #file_panding,
+  #attendance-h1,
+  #manger-Info,
+  #under-manager {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #Info,
+  #Info-Docs,
+  #manger-Info,
+  #under-manager {
+    height: auto;
+  }
+
+  #Info-Docs img {
+    width: 70px;
+    height: 70px;
+  }
+
+  #attendance-h1 {
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  #employees {
+    height: auto;
+    width: auto;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #Info,
+  #Info-Docs,
+  #file_upload,
+  #file_panding,
+  #attendance-h1,
+  #manger-Info,
+  #under-manager,
+  #employees {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  #Info,
+  #Info-Docs,
+  #file_upload,
+  #file_panding,
+  #attendance-h1,
+  #manger-Info,
+  #under-manager {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  #Info,
+  #Info-Docs,
+  #manger-Info,
+  #under-manager {
+    margin-top: 10px;
+  }
+
+  #Info-Docs img {
+    width: 50px;
+    height: 50px;
+  }
+
+  #attendance-h1 {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  #employees {
+    font-size: 10px;
+  }
+
+  th,
+  td {
+    padding: 5px;
+  }
+
+  #NoRecord {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #Info,
+  #Info-Docs,
+  #file_upload,
+  #file_panding,
+  #attendance-h1,
+  #manger-Info,
+  #under-manager,
+  #employees {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+  }
+
+  #Info,
+  #Info-Docs,
+  #file_upload,
+  #file_panding,
+  #attendance-h1,
+  #manger-Info,
+  #under-manager {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #Info,
+  #Info-Docs,
+  #manger-Info,
+  #under-manager {
+    height: auto;
+  }
+
+  #Info-Docs img {
+    width: 70px;
+    height: 70px;
+  }
+
+  #attendance-h1 {
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  #employees {
+    height: auto;
+    width: auto;
+  }
+
+  table {
+    width: 100%;
+  }
+}

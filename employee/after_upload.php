@@ -79,6 +79,44 @@
             a:hover {
                 color: blue;
             }
+
+            @media (max-width: 1200px) {
+                .info-container {
+                    margin-left: 5%;
+                    width: 90%;
+                    padding: 15px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .info-container {
+                    max-width: 95%;
+                    padding: 10px;
+                }
+
+                label,
+                .documents ul li {
+                    margin-left: 5px;
+                }
+                .manager-notice {
+                    font-size: 13px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .info-container {
+                    max-width: 100%;
+                    padding: 5px;
+                }
+
+                .info-container h1 {
+                    font-size: 24px;
+                }
+
+                .manager-notice {
+                    font-size: 12px;
+                }
+            }
         </style>
     </head>
 

@@ -8,7 +8,7 @@
 
 <body>
   <h1 id="heading">Your work percentage of previous 5 years!</h1>
-  <div id="container-chart"></div>
+  <div id="container-chart">
   <?php
   include "../databases/db.php";
   $sql = "SELECT * FROM attendance WHERE employees_id = " . $_SESSION['employees_id'];
@@ -29,6 +29,7 @@
 
   $conn->close();
   ?>
+  </div>
   
   <script>
     google.charts.load("current", {

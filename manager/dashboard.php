@@ -23,8 +23,8 @@
                 <img src="/public/iitspath.svg" alt="logo" id="logo">
             </a>
             <h2>Welcome, <span id="welcome">' . (isset($row['name']) ? $row['name'] : 'Guest') . '</span>!</h2>
-            <span><a id="change-pass" href="?page=pass-change&id=' . (isset($row['id']) ? $row['id'] : '') . '">Change Password</a></span>
-            <button><a href="/manager/login.php">Logout</a></button>
+            <span><img src="../public/menu.svg" alt="menu" id="navbar-icon"><a id="change-pass" href="?page=pass-change&id=' . (isset($row['id']) ? $row['id'] : '') . '">Change Password</a></span>
+            <button id="logout"><a href="/manager/login.php">Logout</a></button>
         </nav>';
             }
         } else {
@@ -59,7 +59,23 @@
             ?>
         </div>
     </div>
+    <script>
+        document.getElementById("navbar-icon").addEventListener("click", function() {
+            var box1 = document.querySelector(".box1");
+            if (box1.style.display === "none") {
+                box1.style.display = "block";
+            } else {
+                box1.style.display = "none";
+            }
 
+            var logout = document.getElementById("logout");
+            if (logout.style.display === "none") {
+                logout.style.display = "block";
+            } else {
+                logout.style.display = "none";
+            }
+        });
+    </script>
 </body>
 
 </html>

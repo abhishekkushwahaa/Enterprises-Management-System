@@ -94,6 +94,8 @@ a:hover {
 }
 
 #change-pass {
+  display: flex;
+  margin-top: -25px;
   margin-left: 820px;
   color: blue;
   cursor: pointer;
@@ -102,4 +104,82 @@ a:hover {
 #welcome {
   color: #4caf50;
   font-weight: 100;
+}
+
+#navbar-icon {
+  height: 0;
+  width: 0;
+}
+@media (max-width: 768px) {
+  nav {
+    height: 70px;
+    width: 100%;
+    gap: 20px;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+  }
+  #change-pass {
+    display: none;
+  }
+  .container {
+    flex-direction: column;
+  }
+  #logout {
+    display: none;
+    margin-top: 28%;
+    margin-left: -9%;
+  }
+  #navbar-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .box1 {
+    display: none;
+    width: 100%;
+    position: static;
+    height: auto;
+  }
+  .box2 {
+    width: 100%;
+    position: static;
+    height: auto;
+  }
+
+  .box2 {
+    margin-left: 0;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+  #change-pass {
+    display: none;
+  }
+  #navbar-icon {
+    margin-left: 250px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .box1 {
+    display: none;
+    width: 100%;
+    position: static;
+    height: auto;
+  }
+  .box2 {
+    width: 100%;
+    position: static;
+    height: auto;
+  }
+
+  .box2 {
+    margin-left: 0;
+    padding: 10px;
+  }
 }

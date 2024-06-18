@@ -65,3 +65,42 @@ input[type="submit"]:hover {
 input[type="submit"]:active {
   transform: scale(0.98);
 }
+
+@media (max-width: 768px) {
+  #profile {
+    margin-left: 0;
+  }
+
+  form {
+    margin-left: 20px;
+    width: 80%;
+  }
+
+  #h1profile {
+    font-size: 20px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #profile {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  form {
+    margin-left: 100px;
+    margin-right: 0;
+  }
+
+  #h1profile {
+    font-size: 22px;
+  }
+
+  label {
+    font-size: 18px;
+  }
+}

@@ -75,3 +75,34 @@ tr:nth-child(odd) {
 #reject {
   background-color: red;
 }
+@media (max-width: 768px) {
+  #employees {
+    margin: 10px;
+    background-color: white;
+    width: 95%;
+  }
+  table {
+    width: 100%;
+    margin-left: 10px;
+  }
+  #table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 1024px) {
+  #employees {
+    margin: 10px;
+    background-color: white;
+    width: 95%;
+  }
+  table {
+    width: 100%;
+    margin-left: 10px;
+  }
+  #table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

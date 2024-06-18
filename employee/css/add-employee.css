@@ -102,3 +102,30 @@ select {
   margin-top: 5px;
   width: 500px;
 }
+@media (max-width: 768px) {
+  #add-form {
+    width: auto;
+    margin-left: -150%;
+  }
+  #add-button {
+    width: auto;
+  }
+  #back {
+    margin-left: -150%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 540px) and (max-width: 1024px) {
+  #add-form {
+    width: auto;
+    margin-left: -40%;
+  }
+  #add-button {
+    width: auto;
+  }
+  #back {
+    margin-left: -40%;
+    margin-bottom: 10px;
+  }
+}

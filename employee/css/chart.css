@@ -9,10 +9,44 @@
   border: 1px solid white;
   border-radius: 4px;
 }
+
 #heading {
   margin-top: 30px;
   margin-bottom: -10px;
   margin-left: 250px;
   font-size: 25px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  #container-chart {
+    width: 90%;
+    margin-left: 4.5%;
+  }
+  #heading {
+    width: 95%;
+    margin-left: 4.5%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #container-chart {
+    width: 90%;
+    margin-left: 4.5%;
+  }
+  #heading {
+    width: 95%;
+    margin-left: 4.5%;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  #container-chart {
+    width: 90%;
+    margin-left: 4.5%;
+  }
+  #heading {
+    width: 95%;
+    margin-left: 4.5%;
+  }
 }

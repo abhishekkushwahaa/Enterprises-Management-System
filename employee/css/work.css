@@ -18,35 +18,16 @@
   width: 1020px;
 }
 
-#work-update-project #house {
-  padding-left: 15px;
-  padding-right: 15px;
-  border: 1px solid white;
-  border-radius: 4px;
-  height: 200px;
-  width: 250px;
-  background-color: white;
-  height: fit-content;
-}
-#work-update-project #client {
-  padding-left: 15px;
-  padding-right: 15px;
-  border: 1px solid white;
-  border-radius: 4px;
-  height: 200px;
-  width: 250px;
-  background-color: white;
-  height: fit-content;
-}
+#work-update-project #house,
+#work-update-project #client,
 #work-update-project #learning {
   padding-left: 15px;
   padding-right: 15px;
   border: 1px solid white;
   border-radius: 4px;
-  height: 200px;
-  width: 250px;
   background-color: white;
   height: fit-content;
+  width: 250px;
 }
 
 #work-update {
@@ -73,6 +54,7 @@
   margin-bottom: 5px;
   font-weight: bold;
 }
+
 #work-update input[type="date"],
 #work-update select {
   margin-left: 15px;
@@ -95,6 +77,7 @@
   cursor: pointer;
   font-size: 16px;
 }
+
 #work-update button:hover {
   background-color: #45a049;
 }
@@ -123,4 +106,68 @@
   margin-bottom: 10px;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  #work-update-project {
+    flex-direction: column;
+    margin-left: 5%;
+    width: 90%;
+  }
+
+  #work-update-project #house,
+  #work-update-project #client,
+  #work-update-project #learning {
+    margin-left: -2%;
+    width: 94%;
+    margin-bottom: 20px;
+  }
+
+  #work-update {
+    margin-left: 5%;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #work-update-project {
+    flex-direction: column;
+    margin-left: 2.5%;
+    width: 95%;
+  }
+
+  #work-update-project #house,
+  #work-update-project #client,
+  #work-update-project #learning {
+    margin-left: -2%;
+    width: 97%;
+    margin-bottom: 20px;
+  }
+
+  #work-update {
+    margin-left: 2.5%;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  #work-update-project {
+    flex-direction: column;
+    margin-left: 5%;
+    width: 90%;
+  }
+
+  #work-update-project #house,
+  #work-update-project #client,
+  #work-update-project #learning {
+    margin-left: -1%;
+    width: 98%;
+    margin-bottom: 20px;
+  }
+
+  #work-update {
+    margin-left: 5%;
+    width: 89%;
+    margin-bottom: 30px;
+  }
 }

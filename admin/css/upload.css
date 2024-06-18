@@ -1,0 +1,93 @@
+#fileh1 {
+  text-align: center;
+  margin-top: 20px;
+}
+#file {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+#fileinput {
+  margin-left: 110px;
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #222222;
+  border-radius: 5px;
+}
+#upload:hover {
+  background-color: #222222;
+  color: white;
+}
+#uploadfileh1 {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 40px;
+}
+#download {
+  text-decoration: none;
+}
+#downloadicon {
+  width: 20px;
+  height: 20px;
+}
+#deleteicon {
+  width: 20px;
+  height: 20px;
+}
+#tbl {
+  margin-top: 20px;
+  margin-left: 100px;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 89%;
+}
+
+#tbl th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+td {
+  padding: 6px;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  background-color: #bbbaba;
+}
+
+@media (max-width: 768px) {
+  #fileinput {
+    width: 90%;
+    margin-left: 4%;
+    margin-right: 10px;
+  }
+
+  #tbl {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #fileinput {
+    width: 60%;
+    margin-left: 4%;
+  }
+
+  #tbl {
+    margin-left: 0;
+    width: 100%;
+  }
+}

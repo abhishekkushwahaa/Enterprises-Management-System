@@ -11,7 +11,6 @@ nav {
   align-items: center;
   gap: 20px;
   background-color: #ffffff;
-  /* position: sticky; */
   top: 0;
 }
 
@@ -48,10 +47,12 @@ h1 {
 a {
   text-decoration: none;
 }
+
 a:hover {
   color: #2b3f2c;
   cursor: pointer;
 }
+
 #logo {
   cursor: pointer;
 }
@@ -101,113 +102,114 @@ a:hover {
   border: 1px solid white;
   border-radius: 4px;
   width: 960px;
-  h1 {
-    text-align: center;
-    margin-top: 20px;
-  }
+}
 
-  form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+#info-form h1 {
+  text-align: center;
+  margin-top: 20px;
+}
 
-  label {
-    font-weight: bold;
-  }
+#info-form form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-  input[type="text"],
-  input[type="date"],
-  input[type="number"],
-  input[type="phone"],
-  input[type="password"],
-  input[type="email"] {
-    width: calc(100% - 10px);
-    padding: 2px;
-    height: 30px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    align-items: center;
-  }
+#info-form label {
+  font-weight: bold;
+}
 
-  input[type="file"] {
-    width: calc(100% - 15px);
-    padding: 5px;
-    height: 20px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    align-items: center;
-  }
+#info-form input[type="text"],
+#info-form input[type="date"],
+#info-form input[type="number"],
+#info-form input[type="phone"],
+#info-form input[type="password"],
+#info-form input[type="email"] {
+  width: calc(100% - 10px);
+  padding: 2px;
+  height: 30px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  align-items: center;
+}
 
-  input[type="text"]:focus,
-  input[type="password"]:focus,
-  input[type="phone"]:focus,
-  input[type="number"]:focus,
-  input[type="date"]:focus,
-  input[type="email"]:focus,
-  input[type="file"]:focus {
-    outline: none;
-    border-color: #66afe9;
-    box-shadow: 0 0 5px #66afe9;
-  }
+#info-form input[type="file"] {
+  width: calc(100% - 15px);
+  padding: 5px;
+  height: 20px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  align-items: center;
+}
 
-  button[type="submit"] {
-    background-color: #4caf50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-  }
+#info-form input[type="text"]:focus,
+#info-form input[type="password"]:focus,
+#info-form input[type="phone"]:focus,
+#info-form input[type="number"]:focus,
+#info-form input[type="date"]:focus,
+#info-form input[type="email"]:focus,
+#info-form input[type="file"]:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px #66afe9;
+}
 
-  button[type="submit"]:hover {
-    background-color: #45a049;
-  }
+#info-form button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
 
-  .form-group {
-    margin-bottom: 20px;
-  }
+#info-form button[type="submit"]:hover {
+  background-color: #45a049;
+}
 
-  .form-group:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+#info-form .form-group {
+  margin-bottom: 20px;
+}
 
-  .form-group label {
-    float: left;
-    width: 30%;
-    margin-top: 10px;
-  }
+#info-form .form-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-  .form-group input {
-    float: left;
-    width: 70%;
-  }
+#info-form .form-group label {
+  float: left;
+  width: 30%;
+  margin-top: 10px;
+}
 
-  .form-group.file-upload input[type="file"] {
-    width: calc(100% - 100px);
-    float: left;
-    margin-top: 10px;
-  }
+#info-form .form-group input {
+  float: left;
+  width: 70%;
+}
 
-  .form-group.file-upload button {
-    width: 100px;
-    float: left;
-    margin-top: 10px;
-    margin-left: 10px;
-  }
+#info-form .form-group.file-upload input[type="file"] {
+  width: calc(100% - 100px);
+  float: left;
+  margin-top: 10px;
+}
+
+#info-form .form-group.file-upload button {
+  width: 100px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 #change-pass {
-  margin-left: 850px;
+  margin-left: 800px;
   color: blue;
   cursor: pointer;
 }
@@ -267,7 +269,6 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
@@ -308,7 +309,6 @@ span #check {
   cursor: pointer;
 }
 
-/* Pop up Form */
 .open-button {
   background-color: #555;
   color: white;
@@ -360,6 +360,7 @@ span #check {
   background-color: #ddd;
   outline: none;
 }
+
 .form-container .btn {
   background-color: #04aa6d;
   color: white;
@@ -404,8 +405,127 @@ span #check {
   width: 80px;
   font-size: 12px;
 }
+
 #attendbtn:hover {
   background-color: #4caf50;
   color: white;
   transition: 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    height: 70px;
+    width: auto;
+    background-color: #ffffff;
+    top: 0;
+  }
+  #change-pass {
+    display: none;
+  }
+  #container,
+  #attandance,
+  #attandance-info,
+  #info-form {
+    height: auto;
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px;
+  }
+
+  #leave-info {
+    height: auto;
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px;
+  }
+  #info-form form {
+    max-width: 100%;
+    padding: 10px;
+  }
+  img {
+    height: 70px;
+    width: 200px;
+  }
+  #fill-info {
+    margin-left: 2%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  nav {
+    height: 70px;
+    width: auto;
+    background-color: #ffffff;
+    top: 0;
+  }
+  #change-pass {
+    display: none;
+  }
+  #fill-info {
+    margin-left: 2%;
+  }
+  #attandance-info #attandance {
+    height: auto;
+    margin-left: 0px;
+  }
+  #container,
+  #attandance-info,
+  #info-form {
+    height: auto;
+    width: 95%;
+    margin-left: 2.5%;
+    padding: 10px;
+  }
+  #leave-info {
+    width: 95%;
+    margin-left: 2.5%;
+    padding: 10px;
+    height: auto;
+  }
+  #info-form form {
+    max-width: 100%;
+    padding: 10px;
+  }
+  img {
+    height: 80px;
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  nav {
+    height: 70px;
+    width: auto;
+    background-color: #ffffff;
+    top: 0;
+  }
+  #change-pass {
+    display: none;
+  }
+  #container,
+  #attandance,
+  #attandance-info,
+  #info-form {
+    height: auto;
+    width: 89.5%;
+    margin-left: 4.5%;
+    padding: 10px;
+  }
+  #leave-info {
+    width: 89.5%;
+    margin-left: 4.5%;
+    padding: 10px;
+    height: auto;
+  }
+  #info-form form {
+    max-width: 100%;
+    padding: 10px;
+  }
+  img {
+    height: 90px;
+    width: 230px;
+  }
+  #fill-info {
+    margin-left: 3%;
+  }
 }

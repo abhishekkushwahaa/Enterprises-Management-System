@@ -18,6 +18,7 @@
       $result = $conn->query($sql);
 
       if ($result->num_rows > 0) {
+          echo "<div id='table-responsive'>";
           echo "<table><tr><th>Id</th><th>Name</th><th>Email</th><th>View Employee</th><th>Joining Date</th><th>Make Manager</th><th>Edit</th><th>Delete</th></tr>";
           while($row = $result->fetch_assoc()) {
               $id = $row["id"];
@@ -33,6 +34,7 @@
               echo "</td><td><a id='edit' href='?page=edit-employee&id=".$row["id"]."'>Edit</a></td><td><a id='delete' href='?page=delete-employee&id=".$row["id"]."'>Delete</a></td></tr>";
           }
           echo "</table>";
+            echo "</div>";
       } else { 
          echo "<h3 id='NoRecord'>No Record Found!</h3>";
       }

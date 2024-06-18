@@ -17,6 +17,7 @@
             $sql = "SELECT * FROM employees WHERE managers IS NOT NULL AND managers <> ''";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
+                echo "<div id='table-responsive'>";
                 echo "<table><tr><th>Id</th><th>Name</th><th>Email</th><th>View Employee</th><th>Joining Date</th></tr>";
                 while ($row = $result->fetch_assoc()) {
                     $id = $row["id"];
@@ -26,6 +27,7 @@
                     echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td><td><a id='view' href='?page=view-employee&id=" . $row["id"] . "'>View</a></td><td>" . $row["joining_date"] . "</td>";
                 }
                 echo "</table>";
+                echo "</div>";
             } else {
                 echo "<h3 id='NoRecord'>No Record Found!</h3>";
             }

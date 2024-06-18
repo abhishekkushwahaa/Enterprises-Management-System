@@ -10,3 +10,25 @@
   background-color: white;
   font-size: 25px;
 }
+
+@media (max-width: 768px) {
+  #managers {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #mngr {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #managers {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #mngr {
+    font-size: 22px;
+  }
+}

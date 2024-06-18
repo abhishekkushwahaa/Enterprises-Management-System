@@ -32,6 +32,7 @@
    $result = $conn->query($sql);
 
    if ($result->num_rows > 0) {
+      echo "<div id='table-responsive'>";
       echo "<table><tr><th>Sr.no.</th><th>Leave applied date</th><th>Leave start date</th><th>Days of leave</th><th>Resume date</th><th>Leave of employee</th><th>Status</th><th class='action-column'>Action</th>";
       while ($row = $result->fetch_assoc()) {
          echo "<tr><td>" . $row["id"] . "</td><td>" . $row["applied_date"] . "</td><td>" . $row["start_date"] . "</td><td>" . $row["days_of_leave"] . "</td><td>" . $row["resume_date"] . "</td><td>" . $row["employee_name"] . "</td><td>" . $row["status"] . "</td><td class='action-column'>";
@@ -43,6 +44,7 @@
          echo "</td></tr>";
       }
       echo "</table>";
+      echo "</div>";
    } else {
       echo "<h3 id='NoRecord'>No Record Found!</h3>";
    }
