@@ -16,22 +16,32 @@
         exit();
     }
     include "../databases/db.php";
-    $managers_sql = "SELECT * FROM managers";
-    $managers_result = $conn->query($managers_sql);
-    $managers = [];
-    if ($managers_result->num_rows > 0) {
-        while ($row = $managers_result->fetch_assoc()) {
-            $managers[] = $row;
+    $employees_sql = "SELECT * FROM employees WHERE id = $employee_id";
+    $employees_result = $conn->query($employees_sql);
+    $employees = [];
+    if ($employees_result->num_rows > 0) {
+        while ($row = $employees_result->fetch_assoc()) {
+            $employees[] = $row;
+            $manager_id = $row['managers'];
+            if($manager_id != 0) {
+                $manager_sql = "SELECT * FROM managers WHERE id = $manager_id";
+                $manager_result = $conn->query($manager_sql);
+                if ($manager_result->num_rows > 0) {
+                    $manager = $manager_result->fetch_assoc();
+                    $manager_email = $manager['email'];
+                } else{
+                    $manager_email = "N/A";
+                }
+            }
         }
     }
-    $manager_email = 'N/A';
     ?>
     <div id="container">
         <h3>Your Name: <span id="name"><?php echo $_SESSION['name']; ?></span></h3>
-        <h3>Your Manager Email: <span id="name"><?php foreach ($managers as $manager) {
-                                                    echo $manager['email'];
-                                                } ?></span></h3>
         <h3>Your Email: <span id="name"><?php echo $_SESSION['email']; ?></span></h3>
+        <?php
+        echo "<h3>Manager Email: <span id='name'>$manager_email</span></h3>";
+        ?>
     </div>
 </body>
 

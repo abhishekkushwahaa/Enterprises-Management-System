@@ -9,28 +9,34 @@
 <body>
   <h1 id="heading">Your work percentage of previous 5 years!</h1>
   <div id="container-chart">
-  <?php
-  include "../databases/db.php";
-  $sql = "SELECT * FROM attendance WHERE employees_id = " . $_SESSION['employees_id'];
-  $result = $conn->query($sql);
-  if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-      $attendance = $row;
+    <?php
+    include "../databases/db.php";
+    $sql = "SELECT COUNT(*) as total FROM work_updates WHERE employees_id = " . $_SESSION['employees_id']." AND date >= DATE_SUB(NOW(), INTERVAL 5 YEAR)";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $total_work_updates = $row['total'];
+
+    $sql = "SELECT DISTINCT category FROM work_updates WHERE employees_id = " . $_SESSION['employees_id'];
+    $result = $conn->query($sql);
+    $categories = [];
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        $categories[] = $row['category'];
+      }
     }
-  }
 
-  $sql = "SELECT ROUND((SELECT COUNT(*) FROM attendance WHERE status='present' AND employees_id=" . $_SESSION['employees_id'] . ") / (SELECT COUNT(*) FROM attendance WHERE employees_id=" . $_SESSION['employees_id'] . ") * 100) AS present_percentage";
-  $result_percentage = $conn->query($sql);
-  $present_percentage = 0;
-  if ($result_percentage->num_rows > 0) {
-    $row_percentage = $result_percentage->fetch_assoc();
-    $present_percentage = $row_percentage['present_percentage'];
-  }
+    $work_percentages = [];
+    foreach ($categories as $category) {
+      $sql = "SELECT COUNT(*) as count FROM work_updates WHERE status='Accepted' AND category='" . $category . "' AND employees_id=" . $_SESSION['employees_id'] ;
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+      $work_percentages[$category] = round($row['count'] / $total_work_updates * 100);
+    }
 
-  $conn->close();
-  ?>
+    $conn->close();
+    ?>
   </div>
-  
+
   <script>
     google.charts.load("current", {
       packages: ["corechart"]
@@ -39,9 +45,12 @@
 
     function activityChart() {
       const data = google.visualization.arrayToDataTable([
-         ["Activity", "Percentage"],
-         ["Present", <?php echo $present_percentage; ?>],
-         ["Absent", <?php echo 100 - $present_percentage; ?>],
+        ["Activity", "Percentage"],
+        <?php
+        foreach ($work_percentages as $category => $percentage) {
+          echo '["' . $category . '", ' . $percentage . '],';
+        }
+        ?>
       ]);
 
       const options = {

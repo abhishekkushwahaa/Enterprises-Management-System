@@ -21,7 +21,7 @@
         </a>
         <h2>Welcome, <span id="welcome"><?php echo $_SESSION['name']; ?></span>!</h2>
         <span><a id="change-pass" href='?page=pass-change&id=<?php echo $_SESSION['employees_id']; ?>'>Change Password</a></span>
-        <button><a href="/employee/login.php">Logout</a></button>
+        <button><a id="logout-button" href="/employee/login.php">Logout</a></button>
     </nav>
 </body>
 

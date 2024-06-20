@@ -60,7 +60,7 @@ h1 {
   position: fixed;
 }
 .box2 {
-  height: 91vh;
+  height: auto;
   width: 1070px;
   margin-left: 300px;
   padding: 20px;

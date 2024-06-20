@@ -67,10 +67,9 @@
 
         <?php include "./attendance.php" ?>
     </h1>
-    
-    <div id="file_upload">
-        <h1>No Pending Updates From Employee So Far.</h1>
-    </div>
+    <h1 id="attendance-h1">Employee's Works
+        <?php include "./work.php" ?>
+    </h1>
 
 </body>
 

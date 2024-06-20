@@ -13,3 +13,4 @@ $show_form = is_null($employee['photo']) && is_null($employee['educational_docum
 
 $stmt->close();
 $conn->close();
+?>

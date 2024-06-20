@@ -37,20 +37,20 @@
     <div id="file_panding">
         <form method="post">
             <?php
-            if($row['status'] == 'Accepted') {
-                echo "<h3>Employee All Doc's Status is". " ". $row['status'] . "!"."</h3>";
+            if ($row['status'] == 'Accepted') {
+                echo "<h3>Employee All Doc's Status is" . " " . $row['status'] . "!" . "</h3>";
             }
 
-            if($row['status'] == 'Rejected') {
-                echo "<h3>Employee Doc's Status is". " ". $row['status'] . ", You can contact with us!"."</h3>";
+            if ($row['status'] == 'Rejected') {
+                echo "<h3>Employee Doc's Status is" . " " . $row['status'] . ", You can contact with us!" . "</h3>";
             }
-            if($row['status'] == 'Pending'){
+            if ($row['status'] == 'Pending') {
                 echo "<h3>Documents not uploaded till now!</h3>";
             }
-            
+
             echo "<input type='hidden' name='id' value='" . $id . "'>";
-            if ($row['status'] == 'Pending' && $row['educational_document'] > 0){
-                echo "<h3>Employee Documents is uploaded, Please review thier documents!<br>Doc's Status:". " ". $row['status'] ."!"."</h3>";
+            if ($row['status'] == 'Pending' && $row['educational_document'] > 0) {
+                echo "<h3>Employee Documents is uploaded, Please review thier documents!<br>Doc's Status:" . " " . $row['status'] . "!" . "</h3>";
                 echo "<button id='accept' name='accepted' type='submit' id='accept'>Accept</button>";
                 echo "<button id='reject' name='rejected' type='submit' id='reject'>Reject</button>";
             }
@@ -76,7 +76,7 @@
         <p><label>Your Previous Organization Certificates:</label> <a href="<?php echo '/employee/uploads/' . $row['previous_certificate']; ?>" target="_blank"><?php echo $row['previous_certificate']; ?></a> </p>
         <p><label>Your Photo:</label> <a href="<?php echo '/employee/uploads/' . $row['photo']; ?>" target="_blank"><?php echo $row['photo']; ?></a> </p>
     </div>
-    
+
     <h1 id="attendance-h1">Employee's Attendance
         <?php include "./attendance.php" ?>
     </h1>
@@ -84,11 +84,6 @@
     <h1 id="attendance-h1">Employee's Works
         <?php include "./work.php" ?>
     </h1>
-
-    
-    <div id="file_upload">
-        <h1>No Pending Updates From Employee So Far.</h1>
-    </div>
 
 </body>
 

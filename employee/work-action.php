@@ -7,8 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $work_categories = $_POST['work'] ?? [];
 
     foreach ($work_categories as $category) {
-        $start_time = $_POST[$category . '-time'][0] ?? null;
-        $end_time = $_POST[$category . '-time'][1] ?? null;
+        $start_time = ($_POST[$category . '-start-time'] ?? null) . ':00';
+        $end_time = ($_POST[$category . '-end-time'] ?? null) . ':00';
         $description = $_POST[$category . '-description'] ?? null;
 
         if ($start_time === null || $end_time === null || $description === null) {

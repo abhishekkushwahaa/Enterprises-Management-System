@@ -43,19 +43,20 @@
     <form method="POST" id="add-form">
         <label for="password">Manager Password:</label>
         <input type="password" name="password" id="password" required value="<?php echo htmlspecialchars($row['password']); ?>">
-        <button type="submit" id="add-button">Update Manager</button>
+        <label for="new-password">New Password:</label>
+        <input type="new-password" name="new-password" id="new-password" required>
+        <button type="submit" id="add-button">Change Password</button>
     </form>
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = $_POST['password'];
-
-        $sql = "UPDATE managers SET password='$password' WHERE id=$id";
+        $new_password = $_POST['new-password'];
+        $sql = "UPDATE managers SET password='$new_password' WHERE id=$id";
         if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('manager password updated successfully'); window.location.href='/manager/dashboard.php';</script>";
-            exit();
+            echo "<script>alert('Password updated successfully'); window.location.href='/manager/dashboard.php';</script>";
         } else {
-            echo "<script>alert('Error: " . $conn->error . "');</script>";
+            echo "<script>alert('Error updating password: " . $conn->error . "'); window.location.href='/manager/dashboard.php';</script>";
         }
     }
     ?>

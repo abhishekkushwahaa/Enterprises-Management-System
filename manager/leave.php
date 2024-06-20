@@ -27,14 +27,16 @@
       $result = $conn->query($sql);
    }
 
-   $sql = "SELECT leave_applications.id, applied_date, start_date, days_of_leave, resume_date, employee_name, leave_applications.status FROM  leave_applications INNER JOIN employees ON leave_applications.employees_id = employees.id";
-
+   $sql = "SELECT * FROM leave_applications INNER JOIN employees ON leave_applications.employees_id = employees.id WHERE employees.managers IS NOT NULL";
    $result = $conn->query($sql);
 
    if ($result->num_rows > 0) {
       echo "<div id='table-responsive'>";
       echo "<table><tr><th>Sr.no.</th><th>Leave applied date</th><th>Leave start date</th><th>Days of leave</th><th>Resume date</th><th>Leave of employee</th><th>Status</th><th class='action-column'>Action</th>";
       while ($row = $result->fetch_assoc()) {
+         $manager_id = $row["managers"];
+         $id = $_SESSION['id'];
+         if($manager_id == $id) {
          echo "<tr><td>" . $row["id"] . "</td><td>" . $row["applied_date"] . "</td><td>" . $row["start_date"] . "</td><td>" . $row["days_of_leave"] . "</td><td>" . $row["resume_date"] . "</td><td>" . $row["employee_name"] . "</td><td>" . $row["status"] . "</td><td class='action-column'>";
          echo "<form method='post'>";
          echo "<input type='hidden' name='id' value='" . $row["id"] . "'>";
@@ -43,6 +45,7 @@
          echo "</form>";
          echo "</td></tr>";
       }
+   }
       echo "</table>";
       echo "</div>";
    } else {

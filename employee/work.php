@@ -33,7 +33,7 @@
             include "../databases/db.php";
             date_default_timezone_set('Asia/Kolkata');
             $employee_id = $employee['id'];
-            $sql = "SELECT id, employees_id, category, date, description, DATE_FORMAT(start_time, '%l:%i %p') as start_time, DATE_FORMAT(end_time, '%l:%i %p') as end_time, status FROM work_updates WHERE employees_id = $employee_id ORDER BY category DESC";
+            $sql = "SELECT id, employees_id, category, date, description, DATE_FORMAT(start_time, '%l:%i %p') as start_time, DATE_FORMAT(end_time, '%l:%i %p') as end_time, status FROM work_updates WHERE employees_id = $employee_id ORDER BY date DESC LIMIT 6";
             $result = $conn->query($sql);
 
             $result = $conn->query($sql);
@@ -55,7 +55,7 @@
             date_default_timezone_set('Asia/Kolkata');
             $employee_id = $employee['id'];
 
-            $sql = "SELECT id, employees_id, category, date, description, DATE_FORMAT(start_time, '%l:%i %p') as start_time, DATE_FORMAT(end_time, '%l:%i %p') as end_time, status FROM work_updates WHERE employees_id = $employee_id ORDER BY category DESC";
+            $sql = "SELECT id, employees_id, category, date, description, DATE_FORMAT(start_time, '%l:%i %p') as start_time, DATE_FORMAT(end_time, '%l:%i %p') as end_time, status FROM work_updates WHERE employees_id = $employee_id ORDER BY date DESC LIMIT 6";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -74,7 +74,7 @@
             date_default_timezone_set('Asia/Kolkata');
             include "../databases/db.php";
             $employee_id = $employee['id'];
-            $sql = "SELECT id, employees_id, category, date, description, DATE_FORMAT(start_time, '%l:%i %p') as start_time, DATE_FORMAT(end_time, '%l:%i %p') as end_time, status FROM work_updates WHERE employees_id = $employee_id ORDER BY category DESC";
+            $sql = "SELECT id, employees_id, category, date, description, DATE_FORMAT(start_time, '%l:%i %p') as start_time, DATE_FORMAT(end_time, '%l:%i %p') as end_time, status FROM work_updates WHERE employees_id = $employee_id ORDER BY date DESC LIMIT 6";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -121,10 +121,10 @@
                     <div id='dynamic'>
                     <h3>${option.text}</h3>
                     <div id="work-time">
-                        <label for="${option.value}-time">From</label>
-                        <input type="time" id="${option.value}-time" name="${option.value}-time" required>
-                        <label for="${option.value}-time">To</label>
-                        <input type="time" id="${option.value}-time" name="${option.value}-time" required>
+                        <label for="${option.value}-start-time">From</label>
+                        <input type="time" id="${option.value}-start-time" name="${option.value}-start-time" required>
+                        <label for="${option.value}-end-time">To</label>
+                        <input type="time" id="${option.value}-end-time" name="${option.value}-end-time" required>
                     </div>
                     <textarea placeholder="Provide your work update for ${option.text} Project!" id="${option.value}-description" name="${option.value}-description" required></textarea><br>
                     </div>

@@ -10,28 +10,9 @@
 </head>
 
 <body>
-    <nav>
-        <?php
-        include "../databases/db.php";
-        $sql = "SELECT id, name, email, password FROM managers";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo '
-        <nav>
-            <a href="/manager/dashboard.php">
-                <img src="/public/iitspath.svg" alt="logo" id="logo">
-            </a>
-            <h2>Welcome, <span id="welcome">' . (isset($row['name']) ? $row['name'] : 'Guest') . '</span>!</h2>
-            <span><img src="../public/menu.svg" alt="menu" id="navbar-icon"><a id="change-pass" href="?page=pass-change&id=' . (isset($row['id']) ? $row['id'] : '') . '">Change Password</a></span>
-            <button id="logout"><a href="/manager/login.php">Logout</a></button>
-        </nav>';
-            }
-        } else {
-            echo "<script>alert('No manager found!')</script>";
-        }
-        ?>
-    </nav>
+    <?php
+    include "./manager-session.php";
+    ?>
     <div class="container">
         <div class="box1">
             <ul><a href="?page=dashboard">Dashboard</a></ul>

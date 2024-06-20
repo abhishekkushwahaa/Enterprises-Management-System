@@ -14,8 +14,9 @@ form {
 input[type="date"],
 input[type="number"],
 textarea {
-  width: 100%;
+  width: 50%;
   padding: 10px;
+  margin-left: 30%;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -23,17 +24,20 @@ textarea {
 }
 input[type="submit"] {
   background-color: #4caf50;
+  margin-left: 30%;
   color: white;
   padding: 14px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
 }
 input[type="submit"]:hover {
+  margin-left: 30%;
   background-color: #45a049;
 }
 label {
+  margin-left: 30%;
   font-weight: bold;
 }
 
@@ -47,7 +51,7 @@ textarea:focus {
 
 #back {
   margin-bottom: 20px;
-  margin-left: 35%;
+  margin-left: 30%;
   padding: 10px 20px;
   background-color: #4caf50;
   color: white;
@@ -59,4 +63,8 @@ textarea:focus {
 #back a {
   color: white;
   text-decoration: none;
+}
+
+#H1leave {
+  margin-left: 30%;
 }

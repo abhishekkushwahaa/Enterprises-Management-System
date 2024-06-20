@@ -24,7 +24,7 @@
     <div id="attandance-info">
         <div id="attandance">
             <h2>Attendance's Info</h2>
-            <button><a href="apply-leave.php">Apply for leave</a></button>
+            <button><a id="leave-apply" href="apply-leave.php">Apply for leave</a></button>
         </div>
         <?php include "../employee/checkinout.php" ?>
         <span id="check">Maybe, You forgot to mark attendance for the following days:</span>

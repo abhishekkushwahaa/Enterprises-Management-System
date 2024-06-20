@@ -68,6 +68,16 @@
         if ($conn->query($sql) === TRUE) {
             echo "<script>alert('Employee added successfully!');</script>";
             header("Location: ?page=employees");
+
+            $to = $email;
+            $subject = "Welcome to IITS Path";
+            $message = "Dear $name, you have been added to IITS Path as an employee. Your login credentials are as follows: \nEmail: $email \nPassword: $password";
+            $headers = "From: genius.abhishek.sir@gmail.com";
+            if (mail($to, $subject, $message, $headers)) {
+                echo "<script>alert('Mail sent successfully!');</script>";
+            } else {
+                echo "<script>alert('Mail not sent.');</script>";
+            }
         } else {
             echo "<script>alert('Error: " . $conn->error . "');</script>";
         }

@@ -10,14 +10,7 @@
 </head>
 
 <body>
-    <nav>
-        <a href="/admin/dashboard.php">
-            <img src="/public/iitspath.svg" alt="logo" id="logo">
-        </a>
-        <h2>Welcome, Admin!</h2>
-        <img src="../public/menu.svg" alt="menu" id="navbar-icon">
-        <button id="logout"><a href="/admin/login.php">Logout</a></button>
-    </nav>
+    <?php include "navbar.php"; ?>
     <div class="container">
         <div class="box1">
             <ul><a href="?page=dashboard">Dashboard</a></ul>

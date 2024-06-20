@@ -60,7 +60,7 @@ h1 {
   position: fixed;
 }
 .box2 {
-  height: 91vh;
+  height: auto;
   width: 1070px;
   margin-left: 300px;
   padding: 20px;
@@ -156,4 +156,13 @@ a:hover {
     margin-left: 0;
     padding: 10px;
   }
+}
+#welcome {
+  color: #4caf50;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }

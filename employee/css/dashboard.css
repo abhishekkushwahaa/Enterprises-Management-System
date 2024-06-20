@@ -412,6 +412,11 @@ span #check {
   transition: 0.5s;
 }
 
+#leave-status {
+  color: #1ba21f;
+  font-weight: 100;
+}
+
 @media screen and (max-width: 768px) {
   nav {
     height: 70px;
@@ -528,4 +533,16 @@ span #check {
   #fill-info {
     margin-left: 3%;
   }
+}
+#leave-apply {
+  color: white;
+}
+#leave-apply:hover {
+  color: black;
+}
+#logout-button {
+  color: white;
+}
+#logout-button:hover {
+  color: black;
 }
