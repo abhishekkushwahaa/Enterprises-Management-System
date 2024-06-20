@@ -1,34 +1,60 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+
+if (!function_exists('loadEnv')) {
+    function loadEnv($path)
+    {
+        $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $vars = [];
+        foreach ($lines as $line) {
+            if (strpos($line, '=') !== false) {
+                list($name, $value) = explode('=', $line, 2);
+                $vars[$name] = $value;
+            }
+        }
+
+        return $vars;
+    }
+}
+
+$env = loadEnv(__DIR__ . '/.env');
 
 require 'vendor/autoload.php';
 
-function sendEmail($email, $name, $password) {
-    $mail = new PHPMailer(true);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
+function sendEmail($env, $email, $message)
+{
     try {
-        $mail->SMTPDebug = 2;                                 
-        $mail->isSMTP();                                      
-        $mail->Host = 'smtp1.example.com';  
-        $mail->SMTPAuth = true;                               
-        $mail->Username = 'user@example.com';                 
-        $mail->Password = 'secret';                           
-        $mail->SMTPSecure = 'tls';                            
-        $mail->Port = 587;                                    
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();
+        $mail->Host       = $env['SMTP_HOST'];
+        $mail->SMTPAuth   = true;
+        $mail->Username   = $env['SMTP_USERNAME'];
+        $mail->Password   = $env['SMTP_PASSWORD'];
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port       = 465;
 
-        $mail->setFrom('from@example.com', 'Mailer');
-        $mail->addAddress($email, $name);     
+        $mail->setFrom($env['SMTP_USERNAME'], $env['NAME']);
+        $mail->addAddress($email);
+        $mail->addReplyTo($env['EMAIL'], $env['NAME']);
 
-
-        $mail->isHTML(true);                                  
-        $mail->Subject = 'Welcome to IITS Path';
-        $mail->Body    = "Dear $name, you have been added to IITS Path as an employee. Your login credentials are as follows: <br>Email: $email <br>Password: $password";
+        $mail->isHTML(true);
+        $mail->Subject = $env['SUBJECT'];
+        $mail->Body    = $message;
 
         $mail->send();
-        echo 'Message has been sent';
+
+        echo "<script>alert('Employee added and Mail Send successfully!'); window.location.href = '?page=employees';</script>";
     } catch (Exception $e) {
-        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+        echo "
+        <script> 
+         alert('Message could not be sent. Mailer Error: {$mail->ErrorInfo}');
+        </script>
+        ";
     }
 }
-?>
+
+if (isset($_POST["send"])) {
+    sendEmail($env, $_POST["email"], $message);
+}
