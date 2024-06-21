@@ -98,6 +98,7 @@
                 .documents ul li {
                     margin-left: 5px;
                 }
+
                 .manager-notice {
                     font-size: 13px;
                 }
@@ -123,7 +124,13 @@
     <body>
         <div class="info-container">
             <?php include "./approve_docs.php" ?>
-            <img src="/public/avatar.svg" alt="photo" style="width: 100px; height: 100px; margin:0 auto; display: block;">
+            <?php
+            if ($employee['photo'] == null) {
+                echo "<img src='../public/avatar.svg' alt='photo' style='width: 100px; height: 100px; margin:0 auto; display: block;'>";
+            } else {
+                echo "<img src='/employee/uploads/" . $employee['photo'] . "' alt='photo' style='width: 100px; height: 100px; margin:0 auto; display: block; border-radius: 100%;'>";
+            }
+            ?>
             <p><label>Your Name:</label> <?php echo $employee['name']; ?></p>
             <p><label>Your E-Mail:</label> <?php echo $employee['email']; ?></p>
             <p><label>Your Phone Number:</label> <?php echo $employee['phone']; ?></p>

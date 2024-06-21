@@ -57,7 +57,13 @@
 
     <div id="Info-Docs">
         <h1>Employee's Documents</h1>
-        <img src="../public/avatar.svg" alt="photo">
+        <?php 
+        if($row['photo'] == null){
+            echo "<img src='../public/avatar.svg' alt='photo'>";
+        } else {
+            echo "<img src='/employee/uploads/" . $row['photo'] . "' alt='photo'>";
+        }
+        ?>
         <p><label>Your Educational Documents:</label> <a href="<?php echo '/employee/uploads/' . $row['educational_document']; ?>" target="_blank"><?php echo $row['educational_document']; ?></a> </p>
         <p><label>Your Previous Organization Certificates:</label> <a href="<?php echo '/employee/uploads/' . $row['previous_certificate']; ?>" target="_blank"><?php echo $row['previous_certificate']; ?></a> </p>
         <p><label>Your Photo:</label> <a href="<?php echo '/employee/uploads/' . $row['photo']; ?>" target="_blank"><?php echo $row['photo']; ?></a> </p>
