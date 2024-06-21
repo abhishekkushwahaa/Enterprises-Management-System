@@ -10,22 +10,41 @@ if ($managers_result->num_rows > 0) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $isValidate = true;
     $name = $_POST['name'];
+    if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
+        echo "<script>alert('Only letters and white space allowed in name');</script>";
+        $isValidate = false;
+    }
     $email = $_POST['email'];
+    $pattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
+    if (!preg_match($pattern, $email)) {
+        echo "<script>alert('Invalid email format');</script>";
+        $isValidate = false;
+    }
     $password = $_POST['password'];
+    $pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
+    if (!preg_match($pattern, $password)) {
+        echo "<script>alert('Password must contain at least one number, one uppercase letter, one lowercase letter, one special character and at least 8 characters long');</script>";
+        $isValidate = false;
+    }
     $salary = $_POST['salary'];
     $joining_date = $_POST['joining_date'];
     $designation = $_POST['designation'];
     $manager_id = $_POST['managers'];
 
-    $sql = "INSERT INTO employees (name, email, password, salary, joining_date, designation, managers) 
+    if ($isValidate) {
+        $sql = "INSERT INTO employees (name, email, password, salary, joining_date, designation, managers) 
             VALUES ('$name', '$email', '$password', '$salary', '$joining_date', '$designation', '$manager_id')";
-    if ($conn->query($sql) === TRUE) {
-        include "mail.php"; 
-        $message = "Dear $name, you have been added as an employee in our company. Your login credentials are: \nEmail: $email \nPassword: $password";
-        sendEmail($env, $email, $message);
+        if ($conn->query($sql) === TRUE) {
+            include "mail.php";
+            $message = "Dear $name, you have been added as an employee in our company. Your login credentials are: \nEmail: $email \nPassword: $password";
+            sendEmail($env, $email, $message);
+        } else {
+            echo "<script>alert('Error: " . $conn->error . "');</script>";
+        }
     } else {
-        echo "<script>alert('Error: " . $conn->error . "');</script>";
+        echo "<script>alert('Validation failed');</script>";
     }
 }
 
