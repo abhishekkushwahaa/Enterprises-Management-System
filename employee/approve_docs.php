@@ -28,9 +28,17 @@
         while ($row = $result->fetch_assoc()) {
             echo "<h3 id='Docs-info'>Your Documents is " . $row["status"] . ", Your information and documents are given below. " . "</h3>";
         }
-    } 
+    }
     $stmt->close();
     $conn->close();
+    ?>
+
+    <?php
+    if ($employee['status'] == 'Rejected') {
+        echo "<div style='background-color: #f2f2f2; padding: 20px; margin-top: 20px; border-radius: 5px;'>";
+        include "../employee/reject_docs.php";
+        echo "</div>";
+    }
     ?>
 
 </body>

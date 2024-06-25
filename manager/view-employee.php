@@ -24,11 +24,13 @@
         if (isset($_POST['accepted'])) {
             $id = $_POST['id'];
             $sql = "UPDATE employees SET status='Accepted' WHERE id=$id";
+            header("Location: ?page=view-employee&id=$id");
             $result = $conn->query($sql);
         }
         if (isset($_POST['rejected'])) {
             $id = $_POST['id'];
             $sql = "UPDATE employees SET status='Rejected' WHERE id=$id";
+            header("Location: ?page=view-employee&id=$id");
             $result = $conn->query($sql);
         }
     }
@@ -44,7 +46,7 @@
             if ($row['status'] == 'Rejected') {
                 echo "<h3>Employee Doc's Status is" . " " . $row['status'] . ", You can contact with us!" . "</h3>";
             }
-            if ($row['status'] == 'Pending') {
+            if ($row['status'] == 'Pending' && $row['educational_document'] == null && $row['previous_certificate'] == null && $row['photo'] == null) {
                 echo "<h3>Documents not uploaded till now!</h3>";
             }
 

@@ -17,9 +17,7 @@
     <?php include "./employee-session.php" ?>
     <?php if ($show_form) : ?>
         <div id="form-container">
-            <?php
-            include "../employee/before_upload.php"
-            ?>
+            <?php include "../employee/before_upload.php" ?>
         </div>
     <?php else : ?>
         <?php include "../employee/after_upload.php" ?>

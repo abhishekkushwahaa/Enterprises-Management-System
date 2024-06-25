@@ -18,22 +18,28 @@
     include "../databases/db.php";
     $employees_sql = "SELECT * FROM employees WHERE id = $employee_id";
     $employees_result = $conn->query($employees_sql);
-    $employees = [];
-    if ($employees_result->num_rows > 0) {
-        while ($row = $employees_result->fetch_assoc()) {
-            $employees[] = $row;
-            $manager_id = $row['managers'];
-            if($manager_id != 0) {
-                $manager_sql = "SELECT * FROM managers WHERE id = $manager_id";
-                $manager_result = $conn->query($manager_sql);
-                if ($manager_result->num_rows > 0) {
-                    $manager = $manager_result->fetch_assoc();
-                    $manager_email = $manager['email'];
-                } else{
-                    $manager_email = "N/A";
-                }
+    if ($employees_result && $employees_result->num_rows > 0) {
+        $employee = $employees_result->fetch_assoc();
+        $manager_id = $employee['managers'] ?? '0';
+
+        if ($manager_id !== '0') {
+            $stmt = $conn->prepare("SELECT * FROM managers WHERE id = ?");
+            $stmt->bind_param("i", $manager_id); 
+            $stmt->execute();
+            $manager_result = $stmt->get_result();
+
+            if ($manager_result && $manager_result->num_rows > 0) {
+                $manager = $manager_result->fetch_assoc();
+                $manager_email = $manager['email'];
+            } else {
+                $manager_email = "N/A";
             }
+        } else {
+            $manager_email = "No Manager Assigned";
         }
+    } else {
+        echo "Employee not found or query failed.";
+        $manager_email = "N/A"; 
     }
     ?>
     <div id="container">

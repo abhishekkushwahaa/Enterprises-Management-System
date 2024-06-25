@@ -30,8 +30,10 @@
                 include "leave.php";
             } elseif ($page == "profile") {
                 include "profile.php";
-            } elseif ($page == "view-employee") {
+            } elseif ($page == "view-employee") {    
                 include "view-employee.php";
+            } elseif ($page == "edit-employee") {
+                include "edit-employee.php";
             } elseif ($page == "pass-change") {
                 include "pass-change.php";
             } else {

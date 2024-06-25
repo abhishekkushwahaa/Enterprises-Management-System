@@ -28,6 +28,7 @@
       $sql = "UPDATE managers SET password='$password' WHERE email='$email' AND token='$token'";
       if ($conn->query($sql) === TRUE) {
         echo "<script>alert('Congratulations! Your password has been updated successfully!')</script>";
+        echo "<script>window.location.href = 'login.php';</script>";
       } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
       }

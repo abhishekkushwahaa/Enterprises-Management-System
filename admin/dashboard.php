@@ -37,6 +37,8 @@
                 include "add-employee.php";
             } elseif ($page == "edit-employee") {
                 include "edit-employee.php";
+            } elseif ($page == "edit-managers-employee"){
+                include "edit-managers-employee.php";    
             } elseif ($page == "delete-employee") {
                 include "delete-employee.php";
             } elseif ($page == "view-employee") {

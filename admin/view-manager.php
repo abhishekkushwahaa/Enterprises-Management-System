@@ -42,7 +42,7 @@
                 $is_manager = $result_manager->num_rows > 0 ? true : false;
                 echo "<tr><td>" . $row["id"]. "</td><td>" . $row["name"] . "</td><td>" . $row["email"]. "</td><td><a id='view' href='?page=view-employee&id=".$row["id"]."'>View</a></td><td>" . $row["joining_date"]. "</td>";
     
-                echo "</td><td><a id='edit' href='?page=edit-employee&id=".$row["id"]."'>Edit</a></td></tr>";
+                echo "</td><td><a id='edit' href='?page=edit-managers-employee&id=".$row["id"]."'>Edit</a></td></tr>";
             }
             echo "</table>";
         } else { 

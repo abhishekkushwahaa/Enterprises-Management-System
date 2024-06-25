@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <button id="back"><a href="?page=employees">Back</a></button>
+    <button id="back" onclick="window.history.back();">Back</button>
     <?php
     include "../databases/db.php";
     $managers_sql = "SELECT * FROM managers";
@@ -80,7 +80,7 @@
 
         $sql = "UPDATE employees SET name='$name', email='$email', password='$password', salary='$salary', joining_date='$joining_date', designation='$designation', managers='$managers' WHERE id=$id";
         if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('Employee updated successfully'); window.location.href='?page=employees';</script>";
+            echo "<script>alert('Employee updated successfully'); window.location.href='?page=managers';</script>";
             exit();
         } else {
             echo "<script>alert('Error: " . $conn->error . "');</script>";

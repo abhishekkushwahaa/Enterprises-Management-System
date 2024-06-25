@@ -21,7 +21,7 @@ if (!empty($id)) {
                     <img src="/public/iitspath.svg" alt="logo" id="logo">
                 </a>
                 <h2>Welcome, <span id="welcome">' . htmlspecialchars($row['name']) . '</span>!</h2>
-                <span><img src="../public/menu.svg" alt="menu" id="navbar-icon"><a id="change-pass" href="?page=pass-change&id=' . htmlspecialchars($row['id']) . '">Change Password</a></span>
+                <span><img src="../public/menu.svg" alt="menu" id="navbar-icon"></span>
                 <button id="logout"><a href="/admin/login.php">Logout</a></button>
             </nav>';
     } else {

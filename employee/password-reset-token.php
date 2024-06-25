@@ -29,9 +29,6 @@
 </html>
 <?php
 include "../databases/db.php";
-require '../employee/vendor/autoload.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
 
 error_reporting(E_ALL);
 if (isset($_POST['email'])) {
@@ -42,7 +39,9 @@ if (isset($_POST['email'])) {
         $token = bin2hex(random_bytes(50));
         $sql = "UPDATE employees SET token='$token' WHERE email='$email'";
         if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('Password reset token sent to your email!')</script>";
+            include "forgot-password-mail.php";
+            $message = "<a href='http://localhost:3000/admin/reset-password.php?key=" . $email . "&token=" . $token . "'>Click To Reset password</a>";
+            sendEmail($env, $email, $message);
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -50,28 +49,7 @@ if (isset($_POST['email'])) {
         echo "<script>alert('User not found!')</script>";
     }
 
-    $link = "<a href='http://localhost:3000/employee/reset-password.php?key=" . $email . "&token=" . $token . "'>Click To Reset password</a>";
-
     $conn->close();
 
-    // Send email
-    $resend = Resend::client('re_XWBhdceZ_PeTT6hfkSbW47ZPLC7dbSz1R');
-
-
-    try {
-        $resend->emails->send([
-            'from' => 'onboarding@resend.dev',
-            'to' => 'genius.abhishek.sir@gmail.com',
-            'subject' => 'Reset Password',
-            'html' => $link,
-        ]);
-        echo "Password reset token sent to your email!";
-        echo "<br>";
-        echo "<button id='back' onclick='window.history.back()'>Go Back</button>";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
-        echo "<br>";
-        echo "<button id='back' onclick='window.history.back()'>Go Back</button>";
-    }
 }
 ?>
