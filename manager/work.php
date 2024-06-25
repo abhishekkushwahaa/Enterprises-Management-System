@@ -33,13 +33,13 @@
     if (isset($_POST['accepted'])) {
         $id = $_POST['id'];
         $sql = "UPDATE work_updates SET status='Accepted' WHERE id=$id";
-        header("Location: ?page=view-employee&id=$id");
+        header("Location: ?page=employees");
         $result = $conn->query($sql);
     }
     if (isset($_POST['rejected'])) {
         $id = $_POST['id'];
         $sql = "UPDATE work_updates SET status='Rejected' WHERE id=$id";
-        header("Location: ?page=view-employee&id=$id");
+        header("Location: ?page=employees");
         $result = $conn->query($sql);
     }
 
