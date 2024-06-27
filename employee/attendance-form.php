@@ -16,7 +16,7 @@ $conn->close();
     <form action="./forget-attendance.php" method="POST" class="form-container">
         <h1>Mark attendance for the selected date!</h1>
         <input type="hidden" name="status" value="Present">
-        <input type="text" name="employees_id" value="<?php echo $_SESSION['employees_id']; ?>" readonly>
+        <input type="hidden" name="employees_id" value="<?php echo $_SESSION['employees_id']; ?>" readonly>
         <br>
         <label for="date"><b>Date</b></label>
         <input type="date" id="dateInput" name="date" required readonly> <br>

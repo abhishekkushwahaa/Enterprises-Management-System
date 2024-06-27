@@ -10,7 +10,7 @@
 <body>
    <div id="employees">
       <h1 id="emp">Employees</h1>
-      <button id="emp-add"><a href="?page=add-employee">Add New</a></button>
+      <a id="emp-add" href="?page=add-employee" role="button">Add New</a>
    </div>
    <?php
       include "../databases/db.php";

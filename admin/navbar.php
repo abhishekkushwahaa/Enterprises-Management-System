@@ -22,7 +22,7 @@ if (!empty($id)) {
                 </a>
                 <h2>Welcome, <span id="welcome">' . htmlspecialchars($row['name']) . '</span>!</h2>
                 <span><img src="../public/menu.svg" alt="menu" id="navbar-icon"></span>
-                <button id="logout"><a href="/admin/login.php">Logout</a></button>
+                <a id="logout" href="/admin/login.php" role="button">Logout</a>
             </nav>';
     } else {
         echo "<script>alert('No admin found!'); window.location.href = '/admin/login.php';</script>";

@@ -62,7 +62,7 @@ $conn->close();
 </head>
 
 <body>
-    <button id="back"><a href="?page=employees">Back</a></button>
+    <a id="back" href="?page=employees" role="button">Back</a>
     <form method="POST" id="add-form">
         <label for="name">Employee Full Name:</label>
         <input type="text" name="name" id="name" required>
