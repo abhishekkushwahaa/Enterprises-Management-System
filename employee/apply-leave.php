@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <?php include "../employee/leave-status.php"; ?>
-    <button id="back"><a href="/employee/dashboard.php">Back</a></button>
+    <a id="back" href="/employee/dashboard.php" role="button">Back</a>
     <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <h1 id="H1leave">Apply for Leave</h1>
         <label for="leave_date">Select leave date:</label><br>

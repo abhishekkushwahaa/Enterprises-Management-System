@@ -6,9 +6,12 @@ body {
 }
 
 #back {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 50px;
-  padding: 10px 20px;
+  padding-top: 9px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: #4caf50;
   color: white;
   border: none;
