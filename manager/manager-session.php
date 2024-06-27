@@ -22,7 +22,7 @@ if (!empty($id)) {
                 </a>
                 <h2>Welcome, <span id="welcome">' . htmlspecialchars($row['name']) . '</span>!</h2>
                 <span><img src="../public/menu.svg" alt="menu" id="navbar-icon"><a id="change-pass" href="?page=pass-change&id=' . htmlspecialchars($row['id']) . '">Change Password</a></span>
-                <button id="logout"><a href="/manager/login.php">Logout</a></button>
+                <a id="logout" href="/manager/login.php" role="button">Logout</a>
             </nav>';
     } else {
         echo "<script>alert('No manager found!'); window.location.href = '/manager/login.php';</script>";

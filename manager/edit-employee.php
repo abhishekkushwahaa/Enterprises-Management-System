@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <button id="back"><a href="?page=employees">Back</a></button>
+    <a id="back" href="?page=employees" role="button">Back</a>
     <?php
     include "../databases/db.php";
     $managers_sql = "SELECT * FROM managers";
