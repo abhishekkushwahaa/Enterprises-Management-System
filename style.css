@@ -4,22 +4,26 @@ body {
   padding-right: 150px;
   margin-top: 15px;
 }
+
 nav {
   display: flex;
   align-items: center;
   padding: 5px 50px;
   justify-content: space-between;
 }
+
 a {
   text-decoration: none;
   color: black;
   font-size: 20px;
   margin: 10px;
 }
+
 p {
   font-weight: bold;
   font-size: 20px;
 }
+
 #home-update {
   display: flex;
   justify-content: space-between;
@@ -28,6 +32,7 @@ p {
   align-items: center;
   gap: 20px;
 }
+
 #update {
   width: 700px;
 }
@@ -44,6 +49,7 @@ h2 {
   height: 200px;
   width: 308px;
 }
+
 #latest-updates {
   border: 1px solid #ffffff;
   border-radius: 4px;
@@ -57,6 +63,118 @@ h2 {
 #latest-updates a {
   font-weight: normal;
   font-size: 16px;
+}
+
+.carousel {
+  padding: 1rem;
+  background-color: white;
+  margin: 2rem;
+  border-radius: 5px;
+}
+
+.carousel-item {
+  display: none;
+}
+
+.carousel-item:first-child {
+  display: block;
+}
+
+#employee-spotlight {
+  text-align: center;
+  padding: 0.7rem;
+  background-color: white;
+  margin: 2rem auto;
+  border-radius: 5px;
+  width: 90%;
+}
+
+#employee-spotlight img {
+  height: 100px;
+  border-radius: 50%;
+}
+
+#polls {
+  text-align: center;
+  padding: 0.7rem;
+  background-color: white;
+  margin: 2rem auto;
+  border-radius: 5px;
+  width: 90%;
+}
+
+#polls form {
+  text-align: center;
+}
+
+#polls input[type="submit"] {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#polls input[type="submit"]:hover {
+  background-color: #555;
+}
+
+#upcoming-events {
+  text-align: center;
+  padding: 0.7rem;
+  background-color: white;
+  margin: 2rem auto;
+  border-radius: 5px;
+  width: 90%;
+}
+
+#upcoming-events ul {
+  margin-bottom: 20px;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
+
+#upcoming-events li {
+  margin: 0.5rem 0;
+}
+
+#suggestion-box {
+  padding: 0.7rem;
+  background-color: white;
+  margin: 2rem auto;
+  border-radius: 5px;
+  width: 90%;
+}
+
+#suggestion-box form {
+  text-align: center;
+}
+
+#suggestion-box textarea {
+  margin-top: -20px;
+  width: 95%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#suggestion-box input[type="submit"] {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#suggestion-box input[type="submit"]:hover {
+  background-color: #555;
 }
 
 @media (max-width: 768px) {
@@ -84,6 +202,13 @@ h2 {
     display: none;
   }
   #latest-updates {
+    width: 100%;
+  }
+  #employee-spotlight,
+  #polls,
+  #upcoming-events,
+  #suggestion-box {
+    margin-left: -10px;
     width: 100%;
   }
 }
@@ -118,6 +243,13 @@ h2 {
     padding: 10px;
     background-color: #ffffff;
     margin-top: 1px;
+    margin-left: -10px;
+    width: 100%;
+  }
+  #employee-spotlight,
+  #polls,
+  #upcoming-events,
+  #suggestion-box {
     margin-left: -10px;
     width: 100%;
   }
